@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .container {
+            width: 1000px;
+            margin: 50px auto;
+        }
+        .container .tab_box {
+            width: 1000px;
+            position: relative;
+        }
+        .container .tab_box .tab_box_nav {
+            width: 1000px;
+        }
+        .container .tab_box .tab_box_nav li {
+            width: 250px;
+            height: 32px;
+            background: #ccc;
+            text-align: center;
+            line-height: 32px;
+            border-bottom: 3px solid #cccccc;
+            float: left;
+            cursor: pointer;
+        }
+        .container .tab_box .tab_box_nav li.current{
+            border-bottom: 3px solid red;
+        }
+        .tab_box_content {
+            width: 1000px;
+        }
+        .tab_box_content li {
+            display: none;
+        }
+        .tab_box_content li.active {
+            display: block;
+        }
+        .tab_box  p {
+            width: 180px;
+            height: 30px;
+            border: 1px solid #ccc;
+            line-height: 30px;
+            background: #fff;
+            position: absolute;
+            top: 35px;
+            left: 0;
+           display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="tab_box">
+            <p class="loading">正在加载..</p>
+            <ul class="tab_box_nav">
+                <li class="current">国际大牌◆</li>
+                <li>国妆名牌◆</li>
+                <li>清洁用品◆</li>
+                <li>男士精品◆</li>
+            </ul>
+            <ul class="tab_box_content">
+                <li class="active"><img src="./imgs/guojidapai.jpg" alt=""></li>
+                <li><img src="./imgs/guozhuangmingpin.jpg" alt=""></li>
+                <li><img src="./imgs/qingjieyongpin.jpg" alt=""></li>
+                <li><img src="./imgs/nanshijingpin.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script src="./jquery.js"></script>
+    <script>
+        $(function(){
+            
+//            鼠标悬停事件
+            $(".tab_box_nav li").click(function () {
+                $(this).addClass("current").siblings("li").removeClass("current")
+                var index = $(this).index();
+    
+                /* $(selector).index() 获取指定元素的索引值 */
+                $(".tab_box_content li ").eq(index).addClass("active").siblings("li").removeClass("active");
+
+                var bx = $(".tab_box").offset().left;
+                var by =  $(".tab_box").offset().top;
+                
+                /* 获取当前点击tab栏的坐标*/
+                var x = $(this).offset().left; console.log(x)
+                var y = $(this).offset().top; console.log(y)
+
+                /* 计算得出的 正在 加载的盒子p在 tab_box 的盒子的位置*/
+                var resx = x - bx ;
+                var resy = y - by;
+
+                console.log(resx)
+                /* 让p标签在指定的位置  */
+                $(".loading").css({
+                    display:"block",
+                    opacity:"1",
+                    left:resx+400,
+                    top:resy+35
+                })
+                /* 从右边往左边动画出现 */
+                $(".loading").animate({
+                    left:resx
+                },1000)
+
+                /* 从左边往右边动画消失 */
+                 $(".loading").animate({
+                    left:resx+400,
+                    opacity:"0"
+                },1000)
+
+            })
+        })
+    </script>
+</body>
+</html>

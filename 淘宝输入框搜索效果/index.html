@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>输入框</title>
+	<style>
+	 	* {
+	 		padding: 0;
+	 		margin: 0;
+	 		list-style: none;
+	 	}
+		.seach {
+			width: 512px;
+			margin:80px auto;
+		}
+		.seach-box {
+			width: 512px;
+			height: 30px;
+			padding: 5px 10px;
+			border: 1px solid #ccc;
+			position: relative;
+		}
+		.seach-box input {
+			width: 410px;
+			height: 30px;
+			outline: none;
+			border: 0;
+			float: left;
+		}
+		.seach-box .btn {
+			width: 80px;
+			height: 40px;
+			background: #d8505c;
+			text-align: center;
+			line-height: 40px;
+			color:#fff;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+		.seach-info {
+			width: 410px;
+		}
+		.seach-info ul {
+			display: none;
+		}
+		.seach-info ul li {
+			width: 430px;
+			height: 40px;
+			line-height: 40px;
+			border-bottom: 1px solid #ccc;
+		}
+		.seach-info ul li.current {
+			background: red;
+			color:#fff;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="seach">
+		<div class="seach-box">
+			<input type="text"><div class="btn">搜索</div>
+		</div>
+		<div class="seach-info">
+			<ul>
+
+			</ul>
+		</div>
+	</div>
+	
+	<script src="./jquery.js"></script>
+	<script>
+		$(function(){
+			/* 事件源 */
+			var $input = $(".seach-box input");
+			var $ul = $(".seach-info ul");
+			var $lis = $(".seach-info ul li ");
+			/* 判断输入框是否有值*/
+			$("input[type='text']").keyup(function(e){
+				/* 拿到输入的值*/
+				var value = $(this).val();
+				/* 如果输入框有值 显示数据列表*/
+				if(value.length!=0){
+
+					if(e.keyCode==38 || e.keyCode==40){
+						return false;
+					}
+					/*--------------------TO DO AJAX------------------------*/
+					$.ajax({
+						url:"https://suggest.taobao.com/sug?code=utf-8&_ksTS=1505092846181_524&callback=jsonp525&k=1&area=c2c&bucketid=10",
+						type:"get",
+						data:{q:value},
+						dataType:"jsonp",
+						success:function(data){
+//                            console.log(data);
+							var result = data.result;
+							var str = "";
+							for(var i = 0 ; i< result.length;i++){
+								str+="<li>"+result[i][0]+"</li>";
+							}
+                            console.log(str);
+
+                            $ul.html(str);
+                            $ul.show();
+                        },
+						error:function(){
+                            console.log("error");
+                        },
+					})
+
+					/*--------------------TO DO AJAX END------------------------*/
+
+
+
+				}else {
+					/* 如果输入框没值  隐藏数据列表*/
+					$ul.hide();
+				}
+
+			})
+
+			/* 键值码 通过它 判断按下的是向下 还是向上*/
+			$("input[type='text']").keydown(function(event){
+
+
+				/*.next()  下一个元素*/
+				/*.prev()  上一个元素*/
+				/*keyCode == 40  下  */
+				/*keyCode == 38  上  */
+				var keyCode = event.keyCode;
+				// console.log(keyCode)
+				var $current = $(".current");
+				// console.log($current.length)
+				if(keyCode == 40 ){
+					// 判断页面是否存在 current 类名
+					if($current.length==0){
+						// 不存在  给第一个li标签 添加 current
+						$(".seach-info ul li:first-child").addClass("current");
+					}else {
+						// 判断$(".current")有没有下一个li标签
+						if($(".current").next().length==0){
+							// 没有 就是给第一个li添加 current
+							// 把=相邻的元素的current 移除
+							$(".seach-info ul li:first-child").addClass("current").siblings("li").removeClass("current");
+						}else {
+							// 存在就给下一个元素添加 current
+							// 把=相邻的元素的current 移除
+							$(".current").next().addClass("current").siblings("li").removeClass("current");
+
+						}
+					}
+					// 把带有current类名的li的文本赋值 给输入框
+					var txt = $(".current").text();$(this).val(txt);
+					/*keyCode == 38  上  */
+				}else if(keyCode == 38){
+					/* 当按下向上的箭头  页面不存在红色背景的类名*/
+					if($current.length == 0){
+						/* 就给最后一个li标签添加 current */
+						$(".seach-info ul li:last-child").addClass("current");
+					}else {
+						/* 当按下向上的箭头  页面存在红色背景的类名*/
+						if($(".current").prev().length==0){
+							$(".seach-info ul li:last-child").addClass("current").siblings("li").removeClass("current");
+						}else {
+
+							$(".current").prev().addClass("current").siblings().removeClass("current");
+						}
+					}
+					// 把带有current类名的li的文本赋值 给输入框
+					var txt = $(".current").text();$(this).val(txt);
+				}
+
+				
+
+			})
+		})
+	</script>
+</body>
+</html>

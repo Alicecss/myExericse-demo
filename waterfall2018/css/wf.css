@@ -1,0 +1,42 @@
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+}
+.container .items {
+    width: 1200px;
+}
+.container .items ul {
+    width: 1200px;
+    position: relative;
+}
+.container .items ul li {
+    width: 232px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.container .items ul li img {
+    width: 232px;
+    display: block;
+}
+.container .items ul li p {
+    padding: 10px;
+}
+.btn {
+    width: 380px;
+    height: 40px;
+    border: 1px solid #ccc;
+    background: #f3f3f3;
+    text-align: center;
+    line-height: 40px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    margin: auto;
+    cursor: pointer;
+}

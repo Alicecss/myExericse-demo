@@ -1,0 +1,368 @@
+/* 自定义的样式 */
+html , body {
+    width: 100%;
+    font-family: "Microsoft YAHEI";
+    font-size:14px;
+    color:#333;
+}
+
+@font-face {
+    font-family: 'Today';
+    src: url(../font/MiFie-Web-Font.eot) format('eot'),
+    url(../font/MiFie-Web-Font.svg) format('svg'),
+    url(../font/MiFie-Web-Font.ttf) format('ttf'),
+    url(../font/MiFie-Web-Font.woff) format('woff');
+}
+.wjs_icon {
+    font-family: Today;
+}
+.wjs_icon_tell::before {
+    content: "\e908"; /* 字符编码*/
+}
+.wjs_icon_call::before {
+    content: "\e909";
+}
+.wjs_icon_logo::before{
+    content: "\e920";
+}
+.wjs_icon_word::before{
+    content: "\e93e";
+}
+.wjs_icon_E903::before{
+    content: "\e903";
+}
+.wjs_icon_E906::before{
+    content: "\e906";
+}
+.wjs_icon_E905::before{
+    content: "\e905";
+}
+.wjs_icon_E907::before{
+    content: "\e907";
+}
+.wjs_icon_E901::before{
+    content: "\e901";
+}
+.wjs_icon_E900::before{
+    content: "\e900";
+}
+.wjs_icon_E904::before{
+    content: "\e904";
+}
+.wjs_icon_E902::before{
+    content: "\e902";
+}
+.wjs_icon_E906::before{
+    content: "\e906";
+}
+.wjs_icon_new01::before{
+    content: "\e90e";
+}
+.wjs_icon_new02::before{
+    content: "\e90f";
+}
+.wjs_icon_new03::before{
+    content: "\e910";
+}
+.wjs_icon_new04::before{
+    content: "\e911";
+}
+.wjs_icon_partner01::before{
+    content:"\e946";
+}
+.wjs_icon_partner02::before{
+    content: "\e92f";
+}
+.wjs_icon_partner03::before{
+    content: "\e92e";
+}
+.wjs_icon_partner04::before{
+    content: "\e92a";
+}
+.wjs_icon_partner05::before{
+    content: "\e929";
+}
+.wjs_icon_partner06::before{
+    content: "\e931";
+}
+.wjs_icon_partner07::before{
+    content: "\e92c";
+}
+.wjs_icon_partner08::before{
+    content: "\e92b";
+}
+.wjs_icon_partner09::before{
+    content: "\e92d";
+}
+
+
+
+
+
+/* 顶部栏 css  开始*/
+.wjs_topbar {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+.wjs_topbar > .container > .row > div {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+.wjs_topbar > .container > .row > div + div {
+    border-left: 1px solid #ccc;
+}
+.wjs_topbar > .container > .row > div >  a {
+    color:#333;
+    text-decoration: none;
+}
+.wjs_topbar > .container > .row > div > .imgbox {
+    display: block;
+    width: 100%;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+}
+.wjs_topbar > .container > .row > div > .imgbox img {
+    position: absolute;
+    left: 50%;
+    margin-left: -60px;
+    top: 40px;
+    border: 1px solid #ccc;
+    border-top: 0;
+    display: none;
+    z-index: 10000;
+}
+.wjs_topbar > .container > .row > div > a:hover img {
+    display: block;
+}
+.wjs_topbar > .container > .row > div .bblink {
+    margin-left: 10px;
+}
+/* 顶部栏 css  结束*/
+
+/* 导航栏 css 开始*/
+.wjs_nav {
+    width: 100%;
+}
+.wjs_nav .wjs_icon_logo {
+    font-size: 50px;
+    color:#e92323;
+    vertical-align: middle;
+}
+.wjs_nav .wjs_icon_word {
+    font-size: 30px;
+    color:#333;
+    vertical-align: middle;
+}
+/* 导航栏 css 结束*/
+
+/* 广告栏 css 开始 */
+.wjs_banner {
+    width: 100%;
+}
+
+.wjs_banner  .pc_img {
+    display: block;
+    width: 100%;
+    height: 410px;
+    background-size:100% 100%;
+}
+.wjs_banner  .mb_img {
+    width: 100%;
+    height: 100%;
+}
+/* 广告栏 css 结束*/
+
+/* 信息栏  css 开始*/
+.wjs_info {
+    width: 100%;
+    padding: 50px;
+    border-bottom: 1px solid #ccc;
+}
+.wjs_info .container .row > div {
+    padding: 15px;
+}
+/* 自定义的媒介查询*/
+@media (min-width: 1200px) {
+    .wjs_info .container {
+        width: 910px;
+    }
+}
+.wjs_info .container .row > div:hover a ,
+.wjs_info .container .row > div:hover div {
+    color:#e92323;
+}
+.wjs_info a {
+    color:#333;
+    text-decoration: none;
+}
+.wjs_info .wjs_icon {
+    font-size:30px;
+}
+/* 信息栏  css 结束*/
+/* 预约 css  开始 */
+.wjs_book {
+    width: 100%;
+    padding:20px 0;
+    border-bottom: 1px solid #ccc;
+}
+.wjs_book .wjs_icon {
+    font-size:28px;
+}
+.wjs_book_link ,
+.wjs_book_link:hover {
+    color:#e92323;
+    border-bottom:1px dashed #e92323;
+}
+.wjs_book_link:hover {
+    text-decoration: none;
+}
+/* 预约 css  结束*/
+
+/* 产品模块 css 开始*/
+.wjs_product {
+    width: 100%;
+    padding: 20px 0;
+    background-color:#f5f5f5;
+    border-bottom: 1px solid #ccc;
+}
+.wjs_product .container > div .wjs_product_box {
+    width: 100%;
+    display: block;
+    min-height: 150px;
+    box-shadow: 2px 2px 2px 1px #cccccc;
+    margin-top: 20px;
+    background-color: #fff;
+    color:#333;
+    text-decoration: none;
+    font-size:13px;
+}
+.wjs_product .container > div .wjs_product_box .left {
+    overflow: hidden;
+}
+.wjs_product .container > div .wjs_product_box .left .progress {
+    margin-bottom: 0;
+}
+.wjs_product .container > div .wjs_product_box .left h2 {
+    font-size: 16px;
+    font-weight:400;
+    text-align: center;
+}
+.wjs_product .container > div .wjs_product_box .left div p {
+    height: 15px;
+    line-height: 15px;
+    overflow: hidden;
+}
+.wjs_product .container > div .wjs_product_box .right {
+    float: right;
+    width: 108px;
+    height: 150px;
+    border-left: 1px dashed #ccc;
+    position: relative;
+}
+.wjs_product .container > div .wjs_product_box .right:before {
+    content:"";
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    box-shadow: 0px -1px 2px 0px #cccccc inset;
+}
+.wjs_product .container > div .wjs_product_box .right:after {
+    content:"";
+    position: absolute;
+    left: -10px;
+    bottom: -10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    box-shadow:0px 1px 2px 0px #cccccc inset;
+}
+.wjs_product .container > div .wjs_product_box.exp {
+    background-color: #e92323;
+    color:#fff;
+}
+.wjs_product .container > div .wjs_product_box.exp .right {
+    border-left: 1px dashed #fff;
+    text-align: center;
+}
+.wjs_product .container > div .wjs_product_box.exp {
+    position: relative;
+}
+.wjs_product .container > div .wjs_product_box.exp:before {
+    content: "\e915";
+    font-family:"Today" ;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    font-size: 45px;
+    z-index: 1000;
+}
+.wjs_product .container > div .wjs_product_box {
+    text-align: center;
+}
+.wjs_product .container > div .wjs_product_box .right p:first-child {
+    margin-top: 15px;
+}
+.wjs_product .container > div .wjs_product_box .right sup{
+    color:#e92323;
+}
+.wjs_product .container > div .wjs_product_box .right span {
+    font-size: 50px;
+    font-weight:bold;
+    color:#e92323;
+}
+.wjs_product .container > div .wjs_product_box .right .gz_font ,
+.wjs_product .container > div .wjs_product_box .right .wjs_font {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 12px;
+    position: absolute;
+    top: 18px;
+}
+.wjs_product .container > div .wjs_product_box .right .gz_font {
+    color:green;
+    left: 30px;
+}
+.wjs_product .container > div .wjs_product_box .right .wjs_font {
+    left: 55px;
+}
+.wjs_product .container > div .wjs_product_box .right p.mt25 {
+    margin-top: 25px;
+    margin-bottom: 0px;
+}
+.wjs_product .container > div .wjs_product_box.exp .right sup {
+    color:#fff;
+}
+.wjs_product .container > div .wjs_product_box.exp .right span {
+    font-size: 50px;
+    font-weight:bold;
+    color:#fff;
+}
+/* 产品模块 css 结束*/
+
+
+
+
+
+
+
+
+
+
+
+
+.wjs_partner {
+    height: 450px;
+}

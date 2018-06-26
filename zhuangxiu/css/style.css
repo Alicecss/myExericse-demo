@@ -1,0 +1,121 @@
+.zx_layout {
+	font-family: '微软雅黑';
+	color:#333;
+	font-size:14px;
+}
+.desc {
+	width: 120px;
+	height: 120px;
+	float: left;
+}
+.line {
+	width: 100%;
+	height: 50px;
+	background: #ffc001;
+	border-bottom: 3px solid #2e2e2e;
+}
+
+/*  装修案例 css */
+.zx_box {
+	width: 100%;
+	padding: 50px 0;
+}
+
+.zx_box .container > h2 {
+	font-size: 20px;
+	color:#555;
+	text-align: center;
+}
+.zx_box .container .zx_title {
+	font-size:16px;
+	color:#ccc;
+	text-align: center;
+}
+.zx_box .container span {
+	display: block;
+	margin: 0 auto;
+	width: 122px;
+	height: 20px;
+	background: url(../images/des.png) no-repeat center;
+}
+.zx_box .container >  .row {
+	margin-top: 60px;
+}
+.zx_box .container >  .row > div {
+	text-align: center;
+}
+.zx_box .container >  .row > div img {}
+
+.zx_box .container >  .row > div p:nth-child(2) {
+	font-size: 18px;
+	padding-top: 20px;
+}
+.zx_box .container >  .row > div p:last-child {
+	padding: 10px 15px;
+	line-height: 1.8;
+	color:#666;
+}
+
+/* 新闻资讯模块 css  */
+.zx_box .container .row > div > a {
+	text-decoration: none;
+	outline: none;
+	border:0;
+}
+.zx_box .container .row > div > a:focus{ /* 去掉在火狐浏览器默认样式*/
+	outline: none;
+}
+
+
+.zx_box .container .row > div > a  >  h2 {
+	color:#000;
+	padding: 5px 0;
+}
+.zx_box .container .row > div > a  >  p {
+	    display: block;
+	    font-size: 12px;
+	    line-height: 1.7;
+	    padding: 0 15px;
+	    color: #666;
+}
+.zx_box .container-fluid > div {
+	width: 100%;
+	padding: 60px 0;
+	background: url("../images/bg2.jpg");
+}
+.zx_box .container-fluid > div > .container > ul {
+	width: 100%;
+}
+.zx_box .container-fluid > div > .container > ul li {
+	text-align: center;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.zx_box .container-fluid > div > .container > ul > li > img {
+	width: 100%;
+}
+
+/* 案例展示 css */
+.zx_box .container > .row > .item   {
+	padding: 15px 5px;
+}
+.zx_box .container > .row > .item > a  {
+	display: block;
+	width: 100%;
+	height: 550px;
+	text-align: center;
+}
+.zx_box .container > .row > .item > a  > img {
+	width: 100%;
+	height: 550px;
+}
+.zx_box .container > .row > .item > .imgbox >  a  {
+	width: 100%;
+	height: 275px;
+	display: block;
+}
+.zx_box .container > .row > .item  > .imgbox >  a >  img  {
+	width: 100%;
+	height: 275px;
+
+} 
